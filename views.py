@@ -18,10 +18,10 @@ def post_page(postid):
 @main_blueprint.route('/search', methods=['GET'])
 def search_page():
     query = request.args.get('s')
-    found_posts = posts.search_post(query)
+    found_posts = posts.serch_posts(query)
     return render_template('search.html', post=found_posts)
 
 @main_blueprint.route('/users/<username>', methods=['GET'])
 def user_page(username):
-    user_posts = posts.get_post_by_username(username)
+    user_posts = posts.get_posts_by_username(username)
     return render_template('user-feed.html', post=user_posts, username=username)
