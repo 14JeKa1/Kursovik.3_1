@@ -38,7 +38,7 @@ class PostsDAO:
         user_posts = []
 
         for post in posts:
-            if post.poster_name.lowet() == username.lower():
+            if post.poster_name.lower() == username.lower():
                 user_posts.append(post)
 
         return user_posts
